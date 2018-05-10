@@ -33,6 +33,7 @@ ul{
     position: fixed;
     top:0;
     left:0;
+    transition: all 1s;
 }
 /*在js中切换*/
 .lt_aside.hidemenu{
@@ -99,6 +100,7 @@ ul{
     height: 1000px;
     background-color: pink;
     padding-left: 180px;
+    transition: all 1s;
 }
 /*在js中切换*/
 .lt_main.hidemenu{
@@ -110,6 +112,7 @@ ul{
     line-height: 50px;
     background-color: #3C8DBC;
     padding-left: -180px;
+    transition: all 1s;
 }
 .lt_main .lt_topbar a{
     width: 50px;
@@ -123,6 +126,24 @@ ul{
 }
 .lt_main  .container-fluid a{
     color: #337ab7;
+}
+
+/*echarts部分*/
+.lt_main .lt_content{
+    width: 100%;
+    height: 500px;
+
+}
+.lt_main .lt_echarts1{
+    width: 48%;
+    height: 400px;
+    margin-right: 20px;
+
+}
+.lt_main .lt_echarts2{
+    width: 45%;
+    height: 400px;
+
 }
 /*登录模态框*/
 #myModal .red{
