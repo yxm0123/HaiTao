@@ -5,6 +5,13 @@
 $(function(){
     //1.表单验证 1.用户名不能为空 2.密码不能为空
     $("#form").bootstrapValidator({
+
+        //校验图标
+        feedbackIcons:{
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
         //指定验证字段
         fields:{
             //1.用户名验证

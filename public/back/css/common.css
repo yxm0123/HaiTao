@@ -34,6 +34,10 @@ ul{
     top:0;
     left:0;
 }
+/*在js中切换*/
+.lt_aside.hidemenu{
+    left: -180px;
+}
 .lt_aside .as_title {
     width: 100%;
     height: 50px;
@@ -68,7 +72,7 @@ ul{
 .lt_aside .as_nav{
     padding-top: 10px;
 }
-.lt_aside .as_nav i{
+.lt_aside .as_nav li i{
     margin-right:5px;
 }
 .lt_aside .as_nav  a{
@@ -81,15 +85,46 @@ ul{
     border-left:3px solid transparent;
 }
 
+/*//切换公共类*/
+.lt_aside .as_nav li a.current{
+    background-color: #1D1F21;
+    border-left: 3px solid #006699;
+}
+.lt_aside .as_nav .child a{
+    padding-left: 60px;
+}
 /*右侧内容区域*/
 .lt_main {
     width: 100%;
     height: 1000px;
     background-color: pink;
+    padding-left: 180px;
 }
-.lt_main  a{
-
+/*在js中切换*/
+.lt_main.hidemenu{
+    padding-left: 0px;
 }
-.lt_main  {
-
+.lt_main .lt_topbar{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #3C8DBC;
+    padding-left: -180px;
+}
+.lt_main .lt_topbar a{
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+.lt_main  .container-fluid{
+    margin-top: 20px;
+}
+.lt_main  .container-fluid a{
+    color: #337ab7;
+}
+/*登录模态框*/
+#myModal .red{
+    color: #A94442;
 }
