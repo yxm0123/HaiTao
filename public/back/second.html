@@ -63,6 +63,37 @@
             <li class="active">分类管理</li>
             <li class="active">二级分类</li>
         </ol>
+        <div class="lt_content">
+
+            <button class="btn btn-default " id="btnAdd">添加分类</button>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>一级分类名称</th>
+                    <th>二级分类名称</th>
+                    <th>一级分类LOGO</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <!--模板引擎-->
+                <tr>
+                    <td>1</td>
+                    <td>女士管</td>
+                    <td>阿萨德2</td>
+                    <td>
+                        <img src="images/none.png" style="width: 30px;" >
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="text-right">
+                <ul id="pagintor"></ul>
+            </div>
+
+        </div>
     </div>
 </div>
 
@@ -92,8 +123,14 @@
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="js/common.js"></script>
+<!--模板引擎-->
+<script type="text/template">
+
+</script>
 </body>
 </html>
 

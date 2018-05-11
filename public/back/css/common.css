@@ -146,11 +146,18 @@ ul{
 
 }
 
-.lt_content table{
+.table.table-bordered th,
+.table.table-bordered td {
     text-align: center;
+    /* 设置表格内容垂直居中 */
     vertical-align: middle;
+
 }
-/*登录模态框*/
+
+.lt_content .btn{
+    margin-bottom: 20px;
+}
+    /*登录模态框*/
 #myModal .red{
     color: #A94442;
 }
