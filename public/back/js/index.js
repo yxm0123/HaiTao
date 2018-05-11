@@ -21,6 +21,7 @@ $(function(){
             type: 'value'
         },
         series: [{
+            name:'人数',
             data: [1000, 1500, 1800, 1200, 1000, 500],
             type: 'bar'
         }]
