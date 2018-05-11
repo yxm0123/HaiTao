@@ -28,10 +28,76 @@ $(function(){
                     totalPages:Math.ceil(info.total/info.size),
                     onPageClicked:function(a,b,c,page){
                         currentPage = page;
+                        render()
                 }
                 })
             }
         })
     }
 
+    //显示模态框，注册点击事件
+    $("#btnAdd").click(function(){
+        $('#addModal').modal('show');
+    })
+
+    //发送请求 获得一级菜单的内容
+    $.ajax({
+        type:'get',
+        url:"/category/queryTopCategoryPaging",
+        data:{
+            page:1,
+            pageSize:100
+        },
+        success:function(info){
+            console.log(info);
+            var htmlStr = template('cataTemp',info);
+            $('.dropdown-menu').html(htmlStr);
+
+        }
+    })
+
+
+    //把选择的内容添加到span中
+
+    $('.dropdown-menu').on('click',"a", function () {
+        var txt = $(this).text();
+        //设置给按钮在
+        $('#dropdownText').text(txt);
+
+        //获取当前的id 设置到input框中
+        var id= $(this).data('id');
+        $('[name ="categoryId"]').val(id);
+
+        //$('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID");
+    });
+
+    //文件上传
+
+    $('#fileupload').fileupload({
+        dataType:'json',
+        //回调函数
+        done:function(e,data){
+            var picUrl = data.result.picAddr;
+            //设置到src中
+            $('#imgBox img').attr('src',picUrl);
+
+            //设置到input中
+            $('[name="brandLogo"]').val(picUrl);
+            //$('#form').data("bootstrapValidator").updateStatus("brandLogo", "VALID");
+        }
+    })
+
+
+    //5.变单验证
+    $('#form').bootstrapValidator({
+        excluded: [],
+        feedbackIcons: {
+            // 校验成功的
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+
+    })
+    //
 })
