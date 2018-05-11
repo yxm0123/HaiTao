@@ -78,14 +78,7 @@
                 <tbody>
 
                 <!--模板引擎-->
-                <tr>
-                    <td>1</td>
-                    <td>女士管</td>
-                    <td>阿萨德2</td>
-                    <td>
-                        <img src="images/none.png" style="width: 30px;" >
-                    </td>
-                </tr>
+
 
                 </tbody>
             </table>
@@ -127,9 +120,19 @@
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="js/common.js"></script>
+<script src="js/second.js"></script>
 <!--模板引擎-->
-<script type="text/template">
-
+<script type="text/template" id="secTemp">
+    {{ each rows v i}}
+        <tr>
+            <td>{{ i+1 + (page-1) * size }}</td>
+            <td>{{ v.categoryName }}</td>
+            <td>{{ v.brandName }}</td>
+            <td>
+                <img src="{{ v.brandLogo? v.brandLogo : './images/none.png'}}" style="hight: 30px;" >
+            </td>
+        </tr>
+    {{ /each }}
 </script>
 </body>
 </html>
