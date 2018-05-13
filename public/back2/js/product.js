@@ -151,6 +151,7 @@ $(function() {
     // 返回数据类型
     dataType: "json",
     // 响应回调函数
+
     done: function( e, data ) {
       // 每张图片响应回来, 都会调用一次这个响应函数
       var picUrl = data.result.picAddr;
