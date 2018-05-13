@@ -2,7 +2,7 @@
  * Created by Jepson on 2018/4/2.
  */
 
-mui('.mui-scroll-wrapper').scroll({
+ mui('.mui-scroll-wrapper').scroll({
   // 不显示滚动条
   indicators: false
 });
@@ -15,8 +15,8 @@ var tools = {
   getSearchObj: function() {
     // 获取地址栏参数, 封装一个对象
     var search = location.search;
-    // 对 search 字符串解析
-    search = decodeURI( search );
+    // 对 search 字符串解析    search = decodeURI( search );
+
     // 去掉 ?  name=zs&age=18&desc=呵呵呵
     search = search.slice(1);
     
