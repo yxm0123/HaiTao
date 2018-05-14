@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/search.css">
 </head>
 <body>
 <div class="lt_container">
@@ -27,34 +27,23 @@
     <div class="lt_main">
         <div class="lt_category_left">
             <div class="mui-scroll-wrapper">
-
-                   <div class="mui-scroll">
-                       <ul>
-                           <!--坑-->
-                           <li><a href="#">女士官</a></li>
-
-                       </ul>
-
-                   </div>
-            </div>
-        </div>
-        <div class="lt_category_right">
-            <div class="mui-scroll-wrapper">
-
                 <div class="mui-scroll">
-                    <ul class="mui-clearfix">
-                        <li>
-                            <a href="#">
-                                <img src="./images/brand1.png" alt="">
-                                <p>耐克</p>
-                            </a>
-                        </li>
+                    <!--搜索框内容-->
+                    <div class="lt_search">
+                        <input type="text" placeholder="请输入搜索关键字">
+                        <button class="mui-btn mui-btn-primary">搜索</button>
+                    </div>
 
-                    </ul>
+                    <!--搜索历史-->
 
+                    <div class="lt_history">
+                        <!--用于渲染-->
+
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
     <!--尾部区域-->
     <div class="lt_footer">
@@ -79,35 +68,33 @@
         </ul>
     </div>
 </div>
-
 <!--引包-->
 <script src="lib/mui/js/mui.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/category.js"></script>
-<!--渲染左侧页面-->
-<script type="text/template" id="leftTemp">
-    {{ each rows v i }}
-    <li><a href="#" data-id="{{ v.id }}" class="{{ i=== 0? 'current' : ''}}">{{ v.categoryName }}</a></li>
-    {{ /each }}
-</script>
+<script src="js/search.js"></script>
 
 
-<!--渲染右侧页面-->
-<script type="text/template" id="rightTemp">
-    <!--判断-->
-    {{ if rows.length === 0 }}
-        <p class="tips">没有更多分类信息了</p>
-    {{ /if }}
-    {{ each rows v i }}
-         <li>
-            <a href="#">
-                <img src="{{ v.brandLogo }}" >
-                <p>{{ v.brandName }}</p>
-            </a>
-           </li>
-    {{ /each }}
+<!--渲染数据-->
+<script type="text/template" id="historyTemp">
+    <div class="title mui-clearfix">
+        <span class="mui-pull-left">搜索历史</span>
+       <span class="mui-pull-right">
+           <i class="fa fa-trash"></i>
+           清空记录
+       </span>
+    </div>
+    <!--内容区域-->
+    <div class="content">
+        <ul>
+            <li>
+                <a href="#"></a>
+                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
+            </li>
+
+        </ul>
+    </div>
 </script>
 </body>
 </html>

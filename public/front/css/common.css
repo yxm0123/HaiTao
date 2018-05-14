@@ -108,3 +108,21 @@ img{
     height: 100%;
     overflow: hidden;
 }
+/*搜索部分*/
+.lt_search{
+    padding: 10px;
+    position: relative;
+}
+.lt_search input{
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #007AFF;
+    margin: 0;
+    font-size: 12px;
+}
+.lt_search button{
+    position: absolute;
+    right:10px;
+    top:10px;
+    border-radius: 0 5px 5px 0;
+}
