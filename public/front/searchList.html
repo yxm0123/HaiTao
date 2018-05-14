@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/searchList.css">
 </head>
 <body>
 <div class="lt_container">
@@ -17,10 +17,10 @@
         <a href="index.html" class="header_left">
             <i class="fa fa-home"></i>
         </a>
-        <h3>乐淘云购</h3>
-        <a href="search.html" class="header_right">
-            <i class="fa fa-search"></i>
-        </a>
+        <h3>商品列表</h3>
+        <!--<a href="search.html" class="header_right">-->
+            <!--<i class="fa fa-search"></i>-->
+        <!--</a>-->
     </div>
 
     <!--主体区域-->
@@ -73,33 +73,10 @@
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/search.js"></script>
+<script src="js/searchList.js"></script>
 
 
 <!--渲染数据-->
-<script type="text/template" id="historyTemp">
-    {{ if arr.length > 0 }}
-    <div class="title mui-clearfix">
-        <span class="mui-pull-left">搜索历史</span>
-       <span class=" btn_empty mui-pull-right">
-           <i class="fa fa-trash"></i>
-           清空记录
-       </span>
-    </div>
-    <!--内容区域-->
-    <div class="content">
-        <ul>
-            {{ each arr v i }}
-            <li>
-                <a href="searchList.html?val={{ v }}" class="mui-pull-left">{{ v }}</a>
-                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
-            </li>
-            {{ /each }}
-        </ul>
-    </div>
-    {{ else }}
-        <p>没有更多历史记录了</p>
-    {{ /if }}
-</script>
+
 </body>
 </html>
