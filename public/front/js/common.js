@@ -26,7 +26,7 @@ function getSearch(key){
     //删除问号
     search = search.slice(1);
     //将字符串转换成数组
-    var arr = search.splice('&');
+    var arr = search.split('&');
 
     var obj ={};
     arr.forEach(function (ele,index) {

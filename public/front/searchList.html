@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/searchList.css">
 </head>
 <body>
@@ -14,8 +15,8 @@
 
     <!--头部区域-->
     <div class="lt_header">
-        <a href="index.html" class="header_left">
-            <i class="fa fa-home"></i>
+        <a href="javascript:history.go(-1)" class="header_left">
+            <i class="mui-icon mui-icon-back"></i>
         </a>
         <h3>商品列表</h3>
         <!--<a href="search.html" class="header_right">-->
@@ -34,14 +35,27 @@
                         <button class="mui-btn mui-btn-primary">搜索</button>
                     </div>
 
-                    <!--搜索历史-->
-
-                    <div class="lt_history">
-                        <!--用于渲染-->
-
+                    <!--乐淘排序-->
+                    <div class="lt_sort">
+                        <a href="#">上架时间 <i class="fa fa-angle-down"></i></a>
+                        <a data-type="price" class="current" href="#">价格 <i class="fa fa-angle-down"></i></a>
+                        <a data-type="num" href="#">库存 <i class="fa fa-angle-down"></i></a>
+                        <a href="#">折扣 <i class="fa fa-angle-down"></i></a>
                     </div>
+
+                    <!--产品区域-->
+                    <div class="lt_product">
+                        <!--模板渲染-->
+
+
+
+                        <!--加载的图片-->
+                        <div class="loading"></div>
+                    </div>
+
                 </div>
-            </div>
+        </div>
+
         </div>
 
     </div>
@@ -77,6 +91,24 @@
 
 
 <!--渲染数据-->
+<script type="text/template" id="listTemp">
+    <ul class="mui-clearfix">
+        {{ each data v i }}
+        <li class="lt_product_item">
+            <a href="#">
+                <!--//判断是否有图片-->
+
+                <img src='{{ v.pic.length > 0 ? v.pic[0].picAddr : "./images/none.png" }}'>
+                <p class="mui-ellipsis-2">{{ v.proName }}</p>
+
+                <p class="pice">&yen;{{v.price}}</p>
+                <p class="oldPice">&yen;{{ v.oldPrice}}</p>
+                <button class="mui-btn mui-btn-primary">立即购买</button>
+            </a>
+        </li>
+        {{ /each }}
+    </ul>
+</script>
 
 </body>
 </html>
