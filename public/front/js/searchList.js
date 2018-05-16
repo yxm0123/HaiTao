@@ -113,8 +113,9 @@ $(function () {
   //功能3 点击搜索按钮进 行页面渲染
 
   $('.lt_search button').click(function () {
+    mui('.mui-scroll-wrapper').pullRefresh().pulldownLoading();
 
-    render();
+    //render();
     //1.获取搜索框的内容
     // 2.获取本地存储的数组
     // 3.添加到数组的最前面
@@ -145,7 +146,7 @@ $(function () {
 
   //功能3 切换current类
 
-  $('.lt_sort a[data-type]').click(function () {
+  $('.lt_sort a[data-type]').on("tap",function () {
 
     if ($(this).hasClass("current")) {
       $(this).find("i").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
@@ -154,6 +155,8 @@ $(function () {
       $(this).addClass("current").siblings().removeClass("current");
       $(this).find("i").removeClass("fa-angle-up").addClass("fa-angle-down");
     }
+
+    mui('.mui-scroll-wrapper').pullRefresh().pulldownLoading();
   })
   //---------------------------------
 })

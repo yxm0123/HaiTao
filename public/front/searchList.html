@@ -95,7 +95,7 @@
     <ul class="mui-clearfix">
         {{ each data v i }}
         <li class="lt_product_item">
-            <a href="#">
+            <a href="product.html?productId={{ v.id }}">
                 <!--//判断是否有图片-->
 
                 <img src='{{ v.pic.length > 0 ? v.pic[0].picAddr : "./images/none.png" }}'>
