@@ -6,6 +6,7 @@ $(function() {
 
   // 一进入页面, 请求购物车信息数据
   function render() {
+
     setTimeout(function() {
       $.ajax({
         type: "get",
